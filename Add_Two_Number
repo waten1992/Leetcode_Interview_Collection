@@ -1,0 +1,128 @@
+/*
+描述：2个不为负数的数字，逆序把数字每位放入一个节点，用链表连起来。相加！
+EXAMPLE : A=21 , B=432 . C = A + B = 453
+INPUT:
+-----A->1->2
+-----B->2->3->4
+OUTPUT:
+-----C->3->5->4
+*/
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int data ;
+    struct Node * next ;
+    Node(int value) :data(value),next(NULL) {}
+};
+
+class Solution
+{
+public:
+    void Create_Link_List(Node *Head ,int item);
+    Node * Add_Two_Number(Node *A , Node *B);
+    void Dis_List(Node *Head);
+};
+void Solution::Create_Link_List(Node *Head ,int item) //尾插法
+{
+    Node * Rear , * Current ;
+    Rear = Head ;
+    while (Rear->next != NULL)
+    {
+        Rear = Rear->next;
+    }
+    Current = new Node(item);
+    Current->next = Rear->next;
+    Rear->next = Current ;
+#if 0 //for test !
+    cout<<Current->data<<endl;
+#endif
+}
+
+void Solution::Dis_List(Node *Head)
+{
+    Node *Tmp ;
+    Tmp = Head->next ;
+    while(Tmp != NULL)
+    {
+        cout<<Tmp->data<<"\t";
+        Tmp = Tmp->next;
+    }
+}
+
+Node *  Solution::Add_Two_Number(Node *A , Node *B)
+{
+    int Tmp_a , Tmp_b , Carry = 0 ,Tmp_c ;
+    Node *a , *b , *c , *Rear  ;
+    Node Dummy(-1);
+    c = &Dummy;
+    Rear = c ;
+    for(a = A->next , b = B->next ; a != NULL || b != NULL ; Rear = Rear->next) //直到2条链表都为空
+    {
+        Tmp_a = (a == NULL ? 0 :a->data) ;
+        Tmp_b = (b == NULL ? 0 :b->data) ;
+
+        Tmp_c = (Tmp_a + Tmp_b + Carry) % 10 ; //取个位数；
+        Carry = (Tmp_a + Tmp_b + Carry) / 10 ; //保存进位；
+
+        Rear->next = new Node(Tmp_c) ;
+        a = ( a == NULL ? NULL : a = a->next ) ; //判断是否为空
+        b = ( b == NULL ? NULL : b = b->next ) ;
+    }
+
+    if(Carry != 0)
+    {
+        Rear->next= new Node(Carry);
+    }
+#if 0 //for test !
+    Solution ccc;
+    ccc.Dis_List(c);
+#endif
+    return c->next; //返回头结点的下一个节点
+
+}
+int main()
+{
+    int i ;
+    const int N = 5 ;
+    Node Dummy_A(-1);
+    Node Dummy_B(-1);
+    Node Dummy_C(-1);
+    Node *a , *b , *c ;
+    a =  &Dummy_A;
+    b =  &Dummy_B;
+    c =  &Dummy_C;
+    Solution C;
+#if 1
+    for(i = 1 ; i < N-2 ; i++ )
+        C.Create_Link_List(a,i);
+#endif
+#if 1
+    for(i = 2 ; i < N ; i++ )
+        C.Create_Link_List(b,i);
+#endif
+    cout<<"This is a list -->"<<endl<<"\t\t\t";
+    C.Dis_List(a);
+    cout<<endl<<"This is b list -->"<<endl<<"\t\t\t";
+    C.Dis_List(b);
+    cout<<endl<<"Add a and b after--->"<<endl<<"\t\t\t";
+    c->next = C.Add_Two_Number(a,b);
+    C.Dis_List(c);
+    return 0;
+}
+
+
+/*
+The Answer as follows-->
+
+This is a list -->
+                        1       2
+This is b list -->
+                        2       3       4
+Add a and b after--->
+                        3       5       4
+Process returned 0 (0x0)   execution time : 0.031 s
+Press any key to continue.
+
+*/
