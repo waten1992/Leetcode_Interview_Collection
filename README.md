@@ -10,4 +10,4 @@
 ![Judge_int_is_palindorme][2]
 
   [1]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Judge_Int_Is_Palindorme.cpp
-  [2]: http://pan.baidu.com/s/1o6xBqcU
+  [2]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/Judge_int_is%20plindrome.JPG
