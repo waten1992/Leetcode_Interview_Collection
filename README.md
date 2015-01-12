@@ -5,9 +5,27 @@
 
 --------------------------------------
 
+--------------------------------------
+## 001-->Judge_int_is_palindorme ##
 [001-->Judge_int_is_palindorme][1]
-------
-![Judge_int_is_palindorme][2]
+![001-->Judge_int_is_palindorme][2]
+
+
+----------
+## 002-->Not_Use_add ##
+[002-->Not_Use_add][3]
+![002-->Not_Use_add][4]
+
+
+----------
+## 003-->全排列 ##
+[003-->全排列递归解法][5]
+![003-->全排列递归解法][6]
+
 
   [1]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Judge_Int_Is_Palindorme.cpp
   [2]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/Judge_int_is%20plindrome.JPG
+  [3]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Not_Use_add.C
+  [4]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/Not_use_add.JPG
+  [5]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/%E5%85%A8%E6%8E%92%E5%88%97
+  [6]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/%E5%85%A8%E6%8E%92%E5%88%97.JPG
