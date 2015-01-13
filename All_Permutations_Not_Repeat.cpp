@@ -1,3 +1,8 @@
+/*
+描述：给一个字符串，输出所有的排列；
+解题方法：就是当前字符分别与它后面的数字交换
+*/
+
 #if 1
 #include <stdio.h>
 #include <string.h>
@@ -55,5 +60,14 @@ int main()
 
 
 #endif
+/*
+The Answer as follow --->
 
+THIS IS 1-->aba
+THIS IS 2-->aab
+THIS IS 3-->baa
+
+Process returned 0 (0x0)   execution time : 0.026 s
+Press any key to continue.
+*/
 
