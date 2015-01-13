@@ -21,6 +21,9 @@
 ## 003-->全排列 ##
 [003-->全排列递归解法][5]
 ![003-->全排列递归解法][6]
+----------
+[All_Permutations_Not_Repeat.cpp][7]
+![All_Permutations_Not_Repeat][8]
 
 
   [1]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Judge_Int_Is_Palindorme.cpp
@@ -29,3 +32,5 @@
   [4]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/Not_use_add.JPG
   [5]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/%E5%85%A8%E6%8E%92%E5%88%97
   [6]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/%E5%85%A8%E6%8E%92%E5%88%97.JPG
+  [7]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/All_Permutations_Not_Repeat.cpp
+  [8]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/All_Permutation_Not_Repeat.JPG
