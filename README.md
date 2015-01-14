@@ -34,7 +34,8 @@ LRUCache(int capacity)
 	{
 		this->capacity = capacity ;
 	}
---------------------------------------------
+```
+```c++
 	int Get (int key )
 	{
 		if (cacheMap.find(key) == cacheMap.end() )
@@ -46,7 +47,8 @@ LRUCache(int capacity)
 
 		return cacheMap[key]->value;
 	}
---------------------------------
+```
+```c++
 void Set (int key , int value)
 	{
 		if(cacheMap.find(key) == cacheMap.end())
@@ -67,7 +69,8 @@ void Set (int key , int value)
 			cacheMap[key] = cacheList.begin();
 		}
 	}
-----------------------------------------------
+```
+```c++
 void Display()
 {
     list<CacheNode>::iterator it;
@@ -76,19 +79,6 @@ void Display()
         cout<<"\t\t\t"<<it->value<<endl;
 }
 ```
->流程图：
-```flow
-st=>start: Start
-op=>operation: Get(key)
-cond=>condition: Yes or No?
-sub=>subroutine: Set(key,value)
-e=>end
-
-st->op->cond
-cond(yes)->e
-cond(no)->sub->op
-```
-
 
   [1]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Judge_Int_Is_Palindorme.cpp
   [2]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/Judge_int_is%20plindrome.JPG
