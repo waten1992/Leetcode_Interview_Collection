@@ -1,9 +1,7 @@
 # Leetcode_Interview_Collection
 =============================
-背景：题目来至leetcode 和其它面试书的例子；代码有借鉴和自己改写和写注释；
-目的：用github 来记录自己；
-
---------------------------------------
+> *背景：题目来至leetcode 和其它面试书的例子；代码有借鉴和自己改写和写注释；
+> *目的：用github 来记录自己；
 
 --------------------------------------
 ## 001-->Judge_int_is_palindorme ##
@@ -25,11 +23,12 @@
 [All_Permutations_Not_Repeat.cpp][7]
 ![All_Permutations_Not_Repeat][8]
 
+
 ----------
+## 004->LRU ##
 [004------>LRU][9]
 ![LRU_implementation][10]
-
-C++代码：
+>C++代码：
 ```c++
 LRUCache(int capacity)
 	{
@@ -76,6 +75,8 @@ void Display()
     for (it = cacheList.begin() ; it != cacheList.end() ; it++)
         cout<<"\t\t\t"<<it->value<<endl;
 }
+```
+>流程图：
 ```flow
 st=>start: Start
 op=>operation: Get(key)
