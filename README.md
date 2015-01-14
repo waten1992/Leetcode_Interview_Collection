@@ -35,19 +35,18 @@ LRUCache(int capacity)
 		this->capacity = capacity ;
 	}
 ```
+
 ```c++
 	int Get (int key )
 	{
 		if (cacheMap.find(key) == cacheMap.end() )
             return -1 ;
-
 		cacheList.splice(cacheList.begin(), cacheList , cacheMap[key] ) ;
-
 		cacheMap[key] = cacheList.begin();
-
 		return cacheMap[key]->value;
 	}
 ```
+
 ```c++
 void Set (int key , int value)
 	{
@@ -58,7 +57,6 @@ void Set (int key , int value)
 				cacheMap.erase(cacheList.back().key);
 				cacheList.pop_back();
 			}
-
 			cacheList.push_front(CacheNode(key,value));
 			cacheMap[key] = cacheList.begin();
 		}
@@ -70,6 +68,7 @@ void Set (int key , int value)
 		}
 	}
 ```
+
 ```c++
 void Display()
 {
