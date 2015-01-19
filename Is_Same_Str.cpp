@@ -11,12 +11,12 @@ using namespace std;
         2-建立一个Identify[256]统计str1中出现的频率；
         3-看str2中出现的频率是否相等；若是则返回1，否者返回0；
 */
-int Is_Same_Str(string Str1 , string Str2)
+bool Is_Same_Str(string Str1 , string Str2)
 {
     char Identify[256] = {0};
     int Index = 0 ;
     if (Str1.length() != Str2.length() )
-        return 0;
+        return false;
     for( Index ; Str1[Index] != '\0'; Index++)
     {
         Identify[Str1[Index]]++; //统计str1的字符的频率
@@ -27,9 +27,9 @@ int Is_Same_Str(string Str1 , string Str2)
         if(Identify[Str2[Index]] != 0) //统计str2是否和str1是相同的
             Identify[Str2[Index]]--;
         else
-            return 0 ;
+            return false ;
     }
-    return 1;
+    return true;
 }
 
 int main()
