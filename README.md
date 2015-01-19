@@ -79,6 +79,19 @@ void Display()
 }
 ```
 
+
+----------
+## 005---->Identify_str.cpp ##
+[确定一个str中的字符是否都是不同的][11]
+![005---->Identify_str.jpg][12]
+
+
+----------
+## 006----->Is_Same_Str.cpp ##
+[其中一个str是否能通过移动而与另一个str相等][13]
+![006----->Is_Same_Str.jpg][14]
+
+
   [1]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Judge_Int_Is_Palindorme.cpp
   [2]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/Judge_int_is%20plindrome.JPG
   [3]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Not_Use_add.C
@@ -89,3 +102,7 @@ void Display()
   [8]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/All_Permutation_Not_Repeat.JPG
   [9]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/LRU.CPP
   [10]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/LRU_Implementation.JPG
+  [11]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Identify_str.cpp
+  [12]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/Identify_str.JPG
+  [13]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Is_Same_Str.cpp
+  [14]: https://github.com/waten1992/Leetcode_Interview_Collection/blob/master/Image/Is_Same_Str.JPG
