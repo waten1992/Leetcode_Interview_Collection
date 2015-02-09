@@ -1,6 +1,5 @@
 /*
 描述：合并2个有序链表的面向过程程序；
-
 */
 #include <iostream>
 using namespace std;
@@ -36,12 +35,12 @@ ListNode * Merge_list(ListNode *s1 , ListNode *s2)
     ListNode *Merge , *Tmp ,*Rear;
     Merge = new ListNode(-1);
     Rear = Merge ;
-    while ( s1 != NULL && s2 != NULL )
+    for ( ; s1 != NULL && s2 != NULL; Rear = Rear->next ,Rear->next = NULL )
     {
         if(s1->val <= s2->val)
         {
             Tmp = s1->next ; //保留下一个元素；
-            Rear->next = s1 ;
+            Rear->next = s1 ; //尾插法
             s1 = Tmp;
         }
         else
@@ -50,10 +49,8 @@ ListNode * Merge_list(ListNode *s1 , ListNode *s2)
             Rear->next = s2 ;
             s2 = Tmp;
         }
-        Rear = Rear->next;
-        Rear->next = NULL;
     }
-    if(s1 != NULL)
+    if(s1 != NULL) //剩下的由新的链表未节点指向
         Rear->next = s1;
     if(s2 != NULL)
         Rear->next = s2 ;
@@ -66,7 +63,7 @@ int main()
     ListNode * S2 = new ListNode(-1);
     int a[] = {3,2,1};
     int b[] = {9,8,5,2};
-    for(int i = 0 ; i < sizeof(a)/sizeof(a[0]) ; i++ )
+    for(int i = 0 ; i < sizeof(a)/sizeof(a[0]) ; i++ ) //用头插法建立有序链表
         Head_Insert(S1,a[i]);
     Display_List(S1);
 
