@@ -39,14 +39,21 @@ public:
  			faster = new_head->next ; //重新指向new_head->next ,有头结点 ;
  			slower = head ; //无头结点
  			ListNode *new_Tmp;
- 			for( ; faster != NULL && slower != NULL ; faster = new_Tmp ,slower = Tmp ;)
+ 			Rear = faster ;
+ 			while( faster != NULL && slower != NULL ) //合并链表
  			{
- 				Tmp = slower->next ;
- 				new_Tmp = faster->next;
- 				faster->next = slower ;
+ 				Tmp = slower->next ; //保存下一个
+ 				new_Tmp = faster->next ; //保存下一个
+ 				faster->next = slower ; //链接下一个
  				slower->next = new_Tmp ;
+ 				Rear = slower;
+ 				faster = new_Tmp ;
+ 				slower = Tmp ;
  			}
- 	
+ 			if(slower != NULL)
+ 				Rear->next = slower;
+
+ 			return new_head->next;
  		}
     }
 };
