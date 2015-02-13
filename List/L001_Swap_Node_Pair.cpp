@@ -25,17 +25,22 @@ public:
  			slower = head;  faster = slower->next; //faster快一步
  			while (faster != NULL ) //拆链表 
  			{
- 				Rear->next = faster ;
+ 				Rear->next = faster ; //指向第一个元素
  				if(faster->next == NULL) 
- 					break;
+ 				{
+ 					faster = faster->next ; //使得faster指向NULL;
+ 					slower->next = NULL ; //使得slower->next == NULL 
+ 				}
  				else
  				{
  					slower->next = faster->next ; //跳转到下一个元素
- 					faster = slower->next ; //	
+ 					slower = slower->next; //指向原链表当前节点
+ 					faster = slower->next ; //指向slower下一个
  				}
  				Rear = Rear->next ; 
  				Rear->next = NULL ;
  			}
+
  			faster = new_head->next ; //重新指向new_head->next ,有头结点 ;
  			slower = head ; //无头结点
  			ListNode *new_Tmp;
