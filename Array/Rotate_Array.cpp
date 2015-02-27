@@ -1,5 +1,6 @@
 --------------------------
-旋转数组，
+旋转数组，Reverse(int x[] ,int i, int j) 是包括边界的[left , right] 
+
 ---------------------------
 
 class Solution {
@@ -27,11 +28,14 @@ public:
 /*---------------
 为什么LEETCODE 总是说Last executed input: [1,2,3], 0
 不知道哪里出了问题了
+----
+上面的程序是可以运行的，但是Leetcode 说运行不能通过！
 --------------
 */
 /*-----------------------------------------
 直接调用C++自带的void reverse( BidirIt first, BidirIt last )
-Runtime: 27 ms
+Reverses the order of the elements in the range [first,last)
+LEETCODE AC- Runtime: 27 ms
 */  
 class Solution {
 public:
