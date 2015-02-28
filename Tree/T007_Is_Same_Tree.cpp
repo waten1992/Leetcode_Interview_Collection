@@ -42,3 +42,17 @@ public:
             return true ;
     }
 };
+
+/*
+递归实现：
+Runtime: 4 ms
+*/
+class Solution {
+public:
+    bool isSameTree(TreeNode *p, TreeNode *q) 
+    {
+       if (!p && !q) return true; // 终止条件
+       if (!p || !q) return false; // 剪枝
+    return p->val == q->val && isSameTree(p->left, q->left) && isSameTree(p->right, q->right);// 三方合并
+    }
+};
