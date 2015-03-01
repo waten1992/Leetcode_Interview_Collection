@@ -55,4 +55,48 @@ private:
     };
 
 };
-
+/*
+其他写法!
+Runtime: 4 ms
+*/
+class Solution
+{
+public:
+    vector<int> postorderTraversal(TreeNode *root)
+    {
+        vector<int> result;
+        const TreeNode *p, *q;/* p->正在访问的结点，q->刚刚访问过的结点*/
+        stack<const TreeNode *> s;
+        p = root;
+        do
+        {
+            while (p != nullptr)   /* 往左下走*/
+            {
+                s.push(p);
+                p = p->left;
+            }
+            q= nullptr;
+            while (!s.empty())
+            {
+                p = s.top();
+                s.pop();
+                /* 右孩子不存在或已被访问，访问之*/
+                if (p->right == q)
+                {
+                    result.push_back(p->val);
+                    q = p; /* 保存刚访问过的结点*/
+                }
+                else
+                {
+                    /* 当前结点不能访问，需第二次进栈*/
+                    s.push(p);
+                    /* 先处理右子树*/
+                    p = p->right;
+                    break;
+                }
+            }
+        }
+        while (!s.empty());
+        return result;
+    };
+};
