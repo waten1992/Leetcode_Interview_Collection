@@ -37,6 +37,9 @@ public:
         }
         A_Cur->next = B_dummy->next ; //合并链表
         B_Cur->next = NULL; //尾节点置NULL
-    return A_dummy->next;
+        Tmp = A_dummy->next;
+        delete A_dummy; //防止内存泄漏
+        delete B_dummy;
+    return Tmp;
     }
 };

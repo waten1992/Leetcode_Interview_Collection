@@ -1,7 +1,14 @@
 /**
- * 思路：
- *      1-把相邻的先拆成2个链表
- *      2-在交换位置合并
+Given a linked list, swap every two adjacent nodes and return its head.
+
+For example,
+Given 1->2->3->4, you should return the list as 2->1->4->3.
+
+Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.
+
+思路：
+      1-把相邻的先拆成2个链表
+      2-在交换位置合并
  */
  
  struct ListNode {
@@ -57,8 +64,9 @@ public:
  			}
  			if(slower != NULL)
  				Rear->next = slower;
-
- 			return new_head->next;
+ 			Tmp = new_head->next;
+ 			delete new_head;  //修复防止内存的泄漏
+ 			return Tmp;
  		}
     }
 };
