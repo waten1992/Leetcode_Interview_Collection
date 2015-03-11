@@ -19,7 +19,7 @@ public:
     int Reverse(int x) // 申请一个临时变量，存储 逆转后的值
     {
         int Tmp = 0 ;
-        for(int i = x ; x ; x = x/10)//原来的值，每次不断的右移一位 ，直到为零；
+        for(; x ; x = x/10)//原来的值，每次不断的右移一位 ，直到为零；
         {
             if(Tmp > INT_MAX /10 || Tmp < INT_MIN /10 ) //溢出
                 return 0;

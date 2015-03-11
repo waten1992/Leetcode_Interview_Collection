@@ -29,12 +29,36 @@ public:
     int reverse(int x) 
     {
         int Tmp = 0 ;
-        for(int i = x ; x ; x = x/10) //每次左移一位
+        for( ; x ; x = x/10) //每次左移一位
         {
         	if(Tmp > INT_MAX /10 || Tmp < INT_MIN /10) //判断是否溢出
             	return 0;    
             Tmp = Tmp*10 + x%10; 
         }
+        return Tmp ;
+    }
+};
+
+/*
+优化之后：
+1032 / 1032 test cases passed.
+Status: Accepted
+Runtime: 16 ms
+*/
+class Solution {
+public:
+    int reverse(int x) 
+    {
+        int Tmp = 0 ;
+        const long int Max = INT_MAX /10;
+        const long int Min = INT_MIN /10;
+        for(int i = x ; x ; x = x/10)
+        {
+            if(Tmp > Max || Tmp < Min ) //溢出
+                return 0;    
+            Tmp = Tmp*10 + x%10;
+        }
+            
         return Tmp ;
     }
 };
