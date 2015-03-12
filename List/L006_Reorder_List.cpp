@@ -37,3 +37,58 @@ public:
 		/*-------逆转---*/
     }
 };
+
+
+/*
+ 1-快慢指针分离链表；
+ 2-逆转后面的链表；
+ 3-合并前面的2个链表
+
+13 / 13 test cases passed.
+Status: Accepted
+Runtime: 74 ms
+ */
+class Solution {
+public:
+    void reorderList(ListNode *head) 
+    {
+        if (head == NULL || head->next == NULL)
+            return ;
+        ListNode *faster = head , *slower = head ,*pre ;
+        while(faster != NULL && faster->next != NULL)
+        {
+            pre = slower;
+            faster = faster->next->next;
+            slower = slower->next;
+        }    
+       
+        pre->next = NULL; //断开
+        
+        slower = reverse(slower);
+        
+        ListNode  *cur = head;
+        while(cur->next)
+        {
+            ListNode *Tmp = cur->next ;
+            cur->next = slower ;
+            slower = slower->next;
+            cur->next->next =Tmp ;
+            cur = Tmp ;
+        }
+        cur->next = slower;
+        
+    }
+    
+    ListNode* reverse(ListNode *head) 
+    {
+        if (head == NULL || head->next == NULL) return head;
+        ListNode *prev = head;
+        for (ListNode *curr = head->next, *next = curr->next; curr;
+            prev = curr, curr = next, next = next ? next->next : NULL) 
+        {
+              curr->next = prev;
+        }
+        head->next = NULL;
+    return prev;
+    }
+};
