@@ -33,3 +33,30 @@ public:
         return result;
     }
 };
+
+
+/*
+双向扫描
+
+600 / 600 test cases passed.
+Status: Accepted
+Runtime: 10 ms
+*/
+
+class Solution
+{
+public:
+    uint32_t reverseBits(uint32_t n)
+    {
+        const int size = 32;
+        bitset<size> B_Set(n);
+        for(int i = 0 ; i < size/2 ; i++ )
+        {
+            int temp = B_Set[i];
+            B_Set[i] = B_Set[size - i - 1];
+            B_Set[size - i -1] = temp;
+        }
+       
+        return (uint32_t) B_Set.to_ulong();;
+    }
+};
