@@ -1,14 +1,22 @@
  /*
+Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
+
+You should preserve the original relative order of the nodes in each of the two partitions.
+
+For example,
+Given 1->4->3->2->5->2 and x = 3,
+return 1->2->2->4->3->5.
+----------------
  思路：
- 1-建立一个新链表保存，大于等于X的
- 2-建立另一个新链表保存，小于X的
- 2-合并2个表新链表；
+     1-建立一个新链表保存，大于等于X的
+     2-建立另一个新链表保存，小于X的
+     2-合并2个表新链表；
  ---------------------
  步骤：
- 1-分别建立2个链表的头结点 A_dummy B_dummy
- 2-大于等于X放在 B_dummy，用尾插法
- 3-小于X放在 A_dummy，用尾插法
- 4-合并A_dummy B_dummy ，并把尾节点置为NULL
+     1-分别建立2个链表的头结点 A_dummy B_dummy
+     2-大于等于X放在 B_dummy，用尾插法
+     3-小于X放在 A_dummy，用尾插法
+     4-合并A_dummy B_dummy ，并把尾节点置为NULL
  */
 class Solution {
 public:
